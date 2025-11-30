@@ -99,3 +99,27 @@ public class AssignmentTwo {
         System.out.println("运行后乘坐历史：");
         pirateShip.printRideHistory();
     }
+
+    public void partSix() {
+        System.out.println("=== Part6 导出功能演示 ===");
+        Ride ferrisWheel = new Ride("R005", "摩天轮", 6, null);
+
+        ferrisWheel.addVisitorToHistory(new Visitor("V030", "爱丽丝", 26, "Adult", "2025-12-01"));
+        ferrisWheel.addVisitorToHistory(new Visitor("V031", "查理", 30, "Adult", "2025-12-01"));
+        ferrisWheel.addVisitorToHistory(new Visitor("V032", "黛西", 24, "Adult", "2025-12-01"));
+        ferrisWheel.addVisitorToHistory(new Visitor("V033", "伊森", 29, "Adult", "2025-12-01"));
+        ferrisWheel.addVisitorToHistory(new Visitor("V034", "菲比", 27, "Adult", "2025-12-01"));
+
+        ferrisWheel.exportRideHistory("ferris_wheel_history.csv");
+    }
+
+    public void partSeven() {
+        System.out.println("=== Part7 导入功能演示 ===");
+        Ride importRide = new Ride("R006", "导入测试设施", 5, null);
+
+        importRide.importRideHistory("ferris_wheel_history.csv");
+
+        System.out.println("导入后的游客总数：" + importRide.numberOfVisitors());
+        importRide.printRideHistory();
+    }
+}
