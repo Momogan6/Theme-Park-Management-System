@@ -2,6 +2,7 @@ public class AssignmentTwo {
     public static void main(String[] args) {
         AssignmentTwo assignment = new AssignmentTwo();
 
+        // Run each module in sequence for demonstration
         assignment.partThree();
         System.out.println("------------------------");
         assignment.partFourA();
@@ -15,32 +16,41 @@ public class AssignmentTwo {
         assignment.partSeven();
     }
 
+    // Part 3: Queue Function Demonstration
     public void partThree() {
         System.out.println("=== Part 3 Queue Function Demonstration ===");
-        Employee operator = new Employee("E001", "张三", 30, "EMP001", "过山车操作员");
-        Ride rollerCoaster = new Ride("R001", "过山车", 2, operator);
+        // Create operator
+        Employee operator = new Employee("E001", "Zhang San", 30, "EMP001", "Roller Coaster Operator");
+        // Create amusement facilities
+        Ride rollerCoaster = new Ride("R001", "roller coaster", 2, operator);
 
-        rollerCoaster.addVisitorToQueue(new Visitor("V001", "杰克", 25, "Adult", "2025-12-01"));
-        rollerCoaster.addVisitorToQueue(new Visitor("V002", "莎伦", 22, "Adult", "2025-12-01"));
-        rollerCoaster.addVisitorToQueue(new Visitor("V003", "本尼", 18, "Youth", "2025-12-01"));
-        rollerCoaster.addVisitorToQueue(new Visitor("V004", "利奥", 30, "Adult", "2025-12-01"));
-        rollerCoaster.addVisitorToQueue(new Visitor("V005", "艾米", 28, "Adult", "2025-12-01"));
+        // Add 5 tourists to the queue
+        rollerCoaster.addVisitorToQueue(new Visitor("V001", "Jack", 25, "Adult", "2025-12-01"));
+        rollerCoaster.addVisitorToQueue(new Visitor("V002", "Sharon", 22, "Adult", "2025-12-01"));
+        rollerCoaster.addVisitorToQueue(new Visitor("V003", "Benny", 18, "Youth", "2025-12-01"));
+        rollerCoaster.addVisitorToQueue(new Visitor("V004", "Leo", 30, "Adult", "2025-12-01"));
+        rollerCoaster.addVisitorToQueue(new Visitor("V005", "Amy", 28, "Adult", "2025-12-01"));
 
+        // Print queue
         rollerCoaster.printQueue();
+        // Remove a tourist
         rollerCoaster.removeVisitorFromQueue();
-        System.out.println("移除一名游客后：");
+        // Print queue again
+        System.out.println("After removing a tourist:");
         rollerCoaster.printQueue();
     }
 
+    // Part 4A: Demonstration of Riding History Function
     public void partFourA() {
-        System.out.println("=== Part4A 乘坐历史功能演示 ===");
-        Ride thunderstorm = new Ride("R002", "雷暴飞车", 4, null);
+        System.out.println("=== Part 4A Ride History Function Demonstration ===");
+        Ride thunderstorm = new Ride("R002", "Thunderstorm flying car", 4, null);
 
-        Visitor v1 = new Visitor("V006", "汤姆", 35, "Adult", "2025-12-01");
-        Visitor v2 = new Visitor("V007", "雪莉", 27, "Adult", "2025-12-01");
-        Visitor v3 = new Visitor("V008", "本", 20, "Youth", "2025-12-01");
-        Visitor v4 = new Visitor("V009", "大卫", 32, "Adult", "2025-12-01");
-        Visitor v5 = new Visitor("V010", "露西", 24, "Adult", "2025-12-01");
+        // Add 5 tourists to history
+        Visitor v1 = new Visitor("V006", "Tom", 35, "Adult", "2025-12-01");
+        Visitor v2 = new Visitor("V007", "Sherry", 27, "Adult", "2025-12-01");
+        Visitor v3 = new Visitor("V008", "Ben", 20, "Youth", "2025-12-01");
+        Visitor v4 = new Visitor("V009", "David", 32, "Adult", "2025-12-01");
+        Visitor v5 = new Visitor("V010", "Lucy", 24, "Adult", "2025-12-01");
 
         thunderstorm.addVisitorToHistory(v1);
         thunderstorm.addVisitorToHistory(v2);
@@ -48,78 +58,98 @@ public class AssignmentTwo {
         thunderstorm.addVisitorToHistory(v4);
         thunderstorm.addVisitorToHistory(v5);
 
-        System.out.println("游客雪莉是否乘坐过？" + thunderstorm.checkVisitorFromHistory(v2));
-        System.out.println("游客杰克是否乘坐过？" + thunderstorm.checkVisitorFromHistory(new Visitor("V001", "杰克", 25, "Adult", "2025-12-01")));
+        // Check if tourists are in history
+        System.out.println("Has tourist Sherry taken it before?" + thunderstorm.checkVisitorFromHistory(v2));
+        System.out.println("Has tourist Jack ever taken it?" + thunderstorm.checkVisitorFromHistory(new Visitor("V001", "Jack", 25, "Adult", "2025-12-01")));
 
-        System.out.println("乘坐总人数：" + thunderstorm.numberOfVisitors());
+        // Print the number and details of historical records
+        System.out.println("Total number of passengers:" + thunderstorm.numberOfVisitors());
         thunderstorm.printRideHistory();
     }
 
+    // Part 4B: Sorting Function Demonstration
     public void partFourB() {
-        System.out.println("=== Part4B 排序功能演示 ===");
-        Ride logRide = new Ride("R003", "原木漂流", 3, null);
+        System.out.println("=== Part 4B Sorting Function Demonstration ===");
+        Ride logRide = new Ride("R003", "Drifting of logs", 3, null);
 
-        logRide.addVisitorToHistory(new Visitor("V011", "迈克", 28, "Adult", "2025-12-01"));
-        logRide.addVisitorToHistory(new Visitor("V012", "安娜", 22, "Adult", "2025-12-01"));
-        logRide.addVisitorToHistory(new Visitor("V013", "约翰", 28, "Adult", "2025-12-01"));
-        logRide.addVisitorToHistory(new Visitor("V014", "莉莉", 19, "Youth", "2025-12-01"));
-        logRide.addVisitorToHistory(new Visitor("V015", "鲍勃", 33, "Adult", "2025-12-01"));
+        // Add 5 tourists
+        logRide.addVisitorToHistory(new Visitor("V011", "Mike", 28, "Adult", "2025-12-01"));
+        logRide.addVisitorToHistory(new Visitor("V012", "Anna", 22, "Adult", "2025-12-01"));
+        logRide.addVisitorToHistory(new Visitor("V013", "John", 28, "Adult", "2025-12-01"));
+        logRide.addVisitorToHistory(new Visitor("V014", "Lily", 19, "Youth", "2025-12-01"));
+        logRide.addVisitorToHistory(new Visitor("V015", "Bob", 33, "Adult", "2025-12-01"));
 
-        System.out.println("排序前：");
+        // Before sorting
+        System.out.println("Before sorting:");
         logRide.printRideHistory();
 
+        // Sort by age+name
         logRide.sortRideHistory(new VisitorComparator());
 
-        System.out.println("排序后（年龄升序+姓名降序）：");
+        // Sorted
+        System.out.println("After sorting (age ascending+name descending):");
         logRide.printRideHistory();
     }
 
+    // Part 5: Demonstration of Running Amusement Facilities
     public void partFive() {
-        System.out.println("=== Part5 运行游乐设施演示 ===");
-        Employee operator = new Employee("E002", "李四", 35, "EMP002", "海盗船操作员");
-        Ride pirateShip = new Ride("R004", "海盗船", 3, operator);
+        System.out.println("=== Part 5 Demonstration of Running Amusement Facilities ===");
+        // Create operator
+        Employee operator = new Employee("E002", "Li Si", 35, "EMP002", "Pirate ship operator");
+        // Create amusement facilities (maximum of 3 people per round)
+        Ride pirateShip = new Ride("R004", "Pirate Ship", 3, operator);
 
+        // Add 10 tourists to the queue
         for (int i = 0; i < 10; i++) {
             pirateShip.addVisitorToQueue(new Visitor(
                     "V" + String.format("%03d", 20 + i),
-                    "游客" + (i + 1),
+                    "tourist" + (i + 1),
                     18 + (i % 20),
                     "Adult",
                     "2025-12-01"
             ));
         }
 
-        System.out.println("运行前等待队列：");
+        // Print queue before running
+        System.out.println("Waiting queue before running:");
         pirateShip.printQueue();
 
+        // Run one round
         pirateShip.runOneCycle();
 
-        System.out.println("运行后等待队列：");
+        // Print queue and history after running
+        System.out.println("Wait queue after running:");
         pirateShip.printQueue();
-        System.out.println("运行后乘坐历史：");
+        System.out.println("Ride history after operation:");
         pirateShip.printRideHistory();
     }
 
+    // Part 6: Export Function Demonstration
     public void partSix() {
-        System.out.println("=== Part6 导出功能演示 ===");
-        Ride ferrisWheel = new Ride("R005", "摩天轮", 6, null);
+        System.out.println("=== Part 6 Export Function Demonstration ===");
+        Ride ferrisWheel = new Ride("R005", "Ferris wheel", 6, null);
 
-        ferrisWheel.addVisitorToHistory(new Visitor("V030", "爱丽丝", 26, "Adult", "2025-12-01"));
-        ferrisWheel.addVisitorToHistory(new Visitor("V031", "查理", 30, "Adult", "2025-12-01"));
-        ferrisWheel.addVisitorToHistory(new Visitor("V032", "黛西", 24, "Adult", "2025-12-01"));
-        ferrisWheel.addVisitorToHistory(new Visitor("V033", "伊森", 29, "Adult", "2025-12-01"));
-        ferrisWheel.addVisitorToHistory(new Visitor("V034", "菲比", 27, "Adult", "2025-12-01"));
+        // Add 5 tourists
+        ferrisWheel.addVisitorToHistory(new Visitor("V030", "Alice", 26, "Adult", "2025-12-01"));
+        ferrisWheel.addVisitorToHistory(new Visitor("V031", "Charlie", 30, "Adult", "2025-12-01"));
+        ferrisWheel.addVisitorToHistory(new Visitor("V032", "Daisy", 24, "Adult", "2025-12-01"));
+        ferrisWheel.addVisitorToHistory(new Visitor("V033", "Ethan", 29, "Adult", "2025-12-01"));
+        ferrisWheel.addVisitorToHistory(new Visitor("V034", "Phoebe", 27, "Adult", "2025-12-01"));
 
+        // Export to CSV file
         ferrisWheel.exportRideHistory("ferris_wheel_history.csv");
     }
 
+    // Part 7: Import Function Demonstration
     public void partSeven() {
-        System.out.println("=== Part7 导入功能演示 ===");
-        Ride importRide = new Ride("R006", "导入测试设施", 5, null);
+        System.out.println("=== Part 7 Import Function Demonstration ===");
+        Ride importRide = new Ride("R006", "Import testing facilities", 5, null);
 
+        // Import CSV file before
         importRide.importRideHistory("ferris_wheel_history.csv");
 
-        System.out.println("导入后的游客总数：" + importRide.numberOfVisitors());
+        // Verify import results
+        System.out.println("Total number of imported tourists:" + importRide.numberOfVisitors());
         importRide.printRideHistory();
     }
 }
