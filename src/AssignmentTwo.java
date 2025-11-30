@@ -16,7 +16,7 @@ public class AssignmentTwo {
     }
 
     public void partThree() {
-        System.out.println("=== Part3 队列功能演示 ===");
+        System.out.println("=== Part 3 Queue Function Demonstration ===");
         Employee operator = new Employee("E001", "张三", 30, "EMP001", "过山车操作员");
         Ride rollerCoaster = new Ride("R001", "过山车", 2, operator);
 
